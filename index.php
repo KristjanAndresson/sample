@@ -4,9 +4,9 @@
 require 'vendor/autoload.php';
 
 // Project constants
-define('PROJECT_NAME', 'halo');
+define('PROJECT_NAME', 'sample');
 define('DEFAULT_CONTROLLER', 'welcome');
-define('DEBUG', false);
+define('DEBUG', true);
 
 // Load app
 require 'system/classes/Application.php';

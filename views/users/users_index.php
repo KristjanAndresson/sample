@@ -1,9 +1,12 @@
+<?php
+    $headerOrder /* @var $headerOrder Halo\classes\Helper\HeaderOrder */
+?>
 <h3>Users</h3>
 <ul class="list-group">
     <table class="table table-bordered">
         <tr>
-            <th>Full name</th>
-            <th>Username</th>
+            <th>Full name <?php echo $headerOrder->setField('full_name')->getHtml()?></th>
+            <th>Username <?php echo $headerOrder->setField('username')->getHtml()?></th>
         </tr>
         <? foreach ($users as $user): ?>
             <tr>

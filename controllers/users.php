@@ -1,4 +1,7 @@
 <?php namespace Halo;
+use Halo\Helper\HeaderOrder;
+use Halo\Service\UserService;
+
 
 /**
  * Created by PhpStorm.
@@ -9,10 +12,19 @@
 class users extends Controller
 {
     public $requires_auth = true;
+    /**
+     * @var UserService
+     */
+    protected $userService;
+
+    public function __construct(){
+        $this->userService = new UserService();
+    }
 
     function index()
     {
-        $this->users = get_all("SELECT * FROM users WHERE deleted=0");
+        $this->headerOrder = new HeaderOrder('users', $_GET);
+        $this->users = $this->userService->getUsers($_GET);
 
     }
 
